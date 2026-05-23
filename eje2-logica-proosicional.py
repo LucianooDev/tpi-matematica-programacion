@@ -1,20 +1,18 @@
 print("\nTABLA DE LA VERDAD")
 valores = [True, False]
-A = {101, 102, 103, 104, 105, 106}
-B = {104, 105, 106, 107, 108}
-C = {102, 105, 109}
+A = {101, 102, 103} 
+B = {102, 105}       
+C = {102, 105, 108}  
+
+print("p q r resultado") # El encabezado arriba de la tabla
+
 for p in valores:
     for q in valores:
         for r in valores:
-
             resultado = (p or q) and r
-
             print(p, q, r, resultado)
-            
 
-print("p q r resultado")
-
-#Se Define usuario critico (𝑝 ∨𝑞)∧𝑟
+#Se Define usuario critico (p v q) and r
 
 def usuario_critico(usuario):
 
@@ -29,7 +27,7 @@ def usuario_critico(usuario):
 criticos = []
 no_criticos = []
 
-usuarios = A & B & C
+usuarios = A | B | C
 
 for usuario in usuarios:
 
@@ -45,10 +43,9 @@ print("Usuarios no criticos:", no_criticos)
 #¿Qué tipo de usuario representa mayor riesgo?
 # Los usuarios que representan mayor riesgo son los usuarios criticos, 102 y 105
 
-#--------------¿Qué significa que un usuario esté en C pero no en A ∪ B?------------
+#--------------¿Qué significa que un usuario esté en C pero no en A u B?------------
 #No aparece registrado con errores, ni figura utilizando api ni la web
 
 #--------------Qué decisión tomarían como equipo programador?-------------------
 #Analizar por qué los usuarios críticos generan errores.
 #Optimizar el manejo de errores para futuras fallas
-#analizar por que los usuarios criticos generan erorres
