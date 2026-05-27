@@ -37,3 +37,39 @@ comp2 = {x for x in (A | B) if x not in C}
 
 print("Comprension 1:", comp1)
 print("Comprension 2:", comp2)
+
+# FUNCION LOGICA
+def usuario_critico(p, q, r):
+    return (p or q) and r
+
+
+# TABLA DE VERDAD
+print("\nTABLA DE VERDAD")
+
+valores = [True, False]
+
+for p in valores:
+    for q in valores:
+        for r in valores:
+
+            resultado = usuario_critico(p, q, r)
+
+            print(p, q, r, resultado)
+
+
+# CLASIFICACION DE USUARIOS
+print("\nCLASIFICACION DE USUARIOS")
+
+todos = A | B | C
+
+for usuario in todos:
+
+    p = usuario in A
+    q = usuario in B
+    r = usuario in C
+
+    if usuario_critico(p, q, r):
+        print(usuario, "-> CRITICO")
+
+    else:
+        print(usuario, "-> NO CRITICO")
